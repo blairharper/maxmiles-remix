@@ -11,3 +11,23 @@ export async function getCreditCardsByUserId(userId: CreditCard["userId"]) {
 
   return cards;
 }
+
+export async function createCard(
+  userId: CreditCard["userId"],
+  name: CreditCard["name"],
+  brand: CreditCard["brand"],
+  last4: CreditCard["last4"],
+  expMonth: CreditCard["expMonth"],
+  expYear: CreditCard["expYear"]
+) {
+  return prisma.creditCard.create({
+    data: {
+      name,
+      brand,
+      last4,
+      expMonth,
+      expYear,
+      userId,
+    },
+  });
+}
