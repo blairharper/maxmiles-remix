@@ -3,10 +3,10 @@ import { CreditCardIcon } from "@heroicons/react/24/outline";
 interface ICreditCardProps {
   creditCard: {
     name: string;
-    description: string;
+    brand: string;
     last4: string;
-    expMonth: string;
-    expYear: string;
+    expMonth: number;
+    expYear: number;
   };
 }
 
@@ -16,7 +16,7 @@ export default function CreditCardComponent({ creditCard }: ICreditCardProps) {
       <div className="flex w-full items-center justify-between rounded-lg bg-gray-100 p-6 shadow-xl">
         <div className="flex flex-col">
           <div className="text-sm text-gray-600">{creditCard.name}</div>
-          <div className="text-sm text-gray-600">{creditCard.description}</div>
+          <div className="text-sm text-gray-600">{creditCard.brand}</div>
           <div className="text-sm text-gray-600">
             **** **** **** {creditCard.last4}
           </div>
